@@ -1,0 +1,20 @@
+<div class="content-login">
+  <h1>Inicia sesión</h1>
+  <form (ngSubmit)="onSignIn()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Correo electronico</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" #correo aria-describedby="emailHelp" name='user' [(ngModel)]="user">
+      <span *ngIf="userValidateMsg != null" class="errorMsg">{{userValidateMsg}}</span>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Contraseña</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" #psw name='password' [(ngModel)]="password">
+      <span *ngIf="passwordValidateMsg != null" class="errorMsg">{{passwordValidateMsg}}</span>
+    </div>
+    <div class="forgot"><a href="#">Olvide mi contraseña</a></div>
+    <div class='enter'>
+      <button type="submit" class="btn btn-primary col-8">Entrar</button>
+    </div>
+  </form>
+</div>
+

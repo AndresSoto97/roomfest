@@ -1,0 +1,87 @@
+.events{
+  overflow-y: scroll;
+  height: 550px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+.info-event{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  height: 100%;
+  margin: 0;
+  padding: 1%;
+  border-radius: 0 3% 3% 0;
+}
+
+
+.content-photo{
+  height: 300px;
+  background: url(https://c6f2y5q5.rocketcdn.me/wp-content/uploads/2018/04/Eventos-restaurante.jpg);
+  margin: 0;
+  border-radius: 3% 0 0 3%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-size: cover;
+}
+
+.description{
+  position: absolute;
+  bottom: -185px;
+  height: 100px;
+  border-radius: 0 0 0 15px;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 68%, rgba(0,0,0,0.65) 100%, rgba(0,0,0,0.65) 101%);
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 68%,rgba(0,0,0,0.65) 100%,rgba(0,0,0,0.65) 101%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 68%,rgba(0,0,0,0.65) 100%,rgba(0,0,0,0.65) 101%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  transition-delay: 1.2s;
+  -webkit-transition-delay: 0.7s;
+  -o-transition-delay: 0.7s;
+  transition-delay: 0.7s;
+  padding: 0 3% 0 3%;
+  color: #fff;
+}
+
+.content-photo > .description {
+  bottom: 0px;
+  left: 0px;
+}
+
+.btn-edit{
+  margin-top: 5%;
+  padding: 5px;
+}
+
+.material-icons{
+  margin-right: 20px;
+  font-size: 15px;
+}
+
+.date-guest{
+  text-align: center;
+}
+.date-guest > div > p {
+  border-radius: 25px;
+  padding: 10px;
+  color: #fff;
+  background-color: #9168AA;
+}
+
+.date-guest > div > p:hover{
+  background-color: #54428E;
+}
+/* @media (max-width:1200px) {
+  .imgage{
+    border-radius: 15%;
+  }
+} */
+
+@media (max-width:1200px) {
+  .info-event{
+    border-radius: 0 0 3% 3%;
+  }
+}

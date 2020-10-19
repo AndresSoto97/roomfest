@@ -1,0 +1,17 @@
+<div id="wrapper">
+  <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+          <li class="sidebar-brand"> <a [routerLink] = '["my-events"]'>Mis eventos</a></li>
+          <li> <a [routerLink] = '["create"]' class="d-xl-flex align-items-xl-center">Organizar<i class="material-icons">account_box</i></a></li>
+          <li> <a  [routerLink] = '["profile"]'class="d-xl-flex align-items-xl-center">Cuenta<i class="material-icons">account_box</i></a></li>
+      </ul>
+      <div class="logout d-xl-flex justify-content-xl-center">
+        <button class="btn btn-outline-danger" (click)="logOut()"><a >Cerrar sesión</a></button>
+      </div>
+  </div>
+  <div class="page-content-wrapper">
+      <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" ><i class="material-icons">menu</i></a>
+        <router-outlet></router-outlet>
+      </div>
+  </div>
+</div>

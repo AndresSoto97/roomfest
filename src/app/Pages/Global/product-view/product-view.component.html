@@ -1,0 +1,34 @@
+<nav class="navbar navbar-dark navbar-expand-md" id="app-navbar">
+  <div class="container-fluid"><img src="assets/img/logo.png" style="width: 40px;" /><a class="navbar-brand" href="#"></a><button data-toggle="collapse" data-target="#navcol-1" class="navbar-toggler"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+      <div
+          class="collapse navbar-collapse d-xl-flex justify-content-xl-center align-items-xl-center" id="navcol-1">
+          <ul class="nav navbar-nav ml-auto ">
+              <li class="nav-item ">
+                <h5 class="nav-link active d-xl-flex justify-content-xl-center align-items-xl-center">
+                  <span>Productos</span>
+                </h5>
+              </li>
+          </ul>
+  </div>
+  </div>
+</nav>
+<div class="gift row">
+  <div class="gift__img col-sm-8 col-12"><img [src]="productImg" /></div>
+  <div class="gift__info col-sm-4 col-12">
+      <h2 class="gift__name">{{productName}}</h2>
+      <div class="gift__details">
+          <p>Detalles:<br>{{productDescription}}</p>
+      </div>
+      <div class="gift__bottom row">
+          <div class="gift__price-wrap col-12 col-sm-12">
+              <div class="gift__today-price"><span>Costo: </span><span class="gift__data">${{productPrice}}</span></div>
+          </div>
+          <div class="gift__cta-wrap col-12 col-sm-6">
+            <div><img class="img-fluid"  [src]="vumark"/></div>
+          </div>
+          <div class="gift__cta-wrap col-12 col-sm-6">
+            <div><img [src]="productAR"/></div>
+          </div>
+      </div>
+  </div>
+</div>

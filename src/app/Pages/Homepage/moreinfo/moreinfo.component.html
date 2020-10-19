@@ -1,0 +1,20 @@
+<section class="row middle">
+  <div class="col-md-6 col-xs-12 information ">
+    <h1>Haz de tu evento el mejor</h1>
+    <p>
+      Sabemos lo especial que es para ti el compartir los acontecimientos importantes de tu vida con quienes más amas, por eso como ROOM FEST estamos comprometidos a hacer más fácil la tarea de organizar tus eventos para que sean memorables.
+    </p>
+  </div>
+  <div class="col-md-6 image">
+    <img src="https://i.pinimg.com/originals/5e/6b/1d/5e6b1de8510f7b7743f97d4e8217001a.png" class="img-fluid">
+  </div>
+  <div class="row secline">
+    <div *ngFor="let detail of details; index as detailIndex;" class="col-md-3 col-xs-8 card details" [ngClass]="{'middledetail' : detailIndex == 1}">
+      <h3>{{ detail.title}}</h3>
+      <div class="card-body">
+        <p>{{detail.img}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+

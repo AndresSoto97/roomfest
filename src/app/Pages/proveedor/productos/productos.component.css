@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.banner{
+  font-family: 'Roboto', sans-serif;
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url(src/assets/img/bg.jpg);
+	background-size: cover;
+	text-align: center;
+}
+.banner .content h2{
+	font-size: 5em;
+	color: #fff;
+}
+.banner .content p{
+	font-size: 1em;
+	color: #fff;
+}
+.btn-banner{
+	font-size: 1em;
+	color: #fff;
+	background: #ff015157;
+	display: inline-block;
+	padding: 10px 30px;
+	margin-top: 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 2px;
+	transition: 0.5s;
+}
+.btn-banner:hover{
+letter-spacing: 5px;
+}
+
+.profile{
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 0px;
+}
+.profile .content{
+	max-width: 800px;
+	text-align: center;
+}
+.profile .content h2{
+font-size: 36px;
+font-weight: 500;
+color: #000;
+}
+.profile .content p{
+font-weight: 300;
+}
+
+
+
+.profileForm{
+	padding: 40px;
+}
+.profileForm .inputBox{
+position: relative;
+width: 100%;
+margin-top: 10px;
+}
+.profileForm .inputBox input, textarea{
+width: 100%;
+padding: 5px 0;
+font-size: 16px;
+margin: 10px 0;
+border:none;
+border-bottom: 2px solid #333;
+outline: none;
+resize: none;
+}
+.profileForm .inputBox span{
+	position: absolute;
+	left: 0;
+	padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #97079E;
+}
+.profileForm .inputBox input:focus ~ span,
+.profileForm .inputBox input:valid ~ span,
+.profileForm .inputBox textarea:focus ~ span,
+.profileForm .inputBox textarea:valid ~ span{
+    color: #97079E;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+.profileForm .inputBox input[type="submit"]{
+  width: 100px;
+  background:  #97079E;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+}
+
+
+.profileInfo > table > .header{
+  background-color: #97079E;
+  color: #fff;
+}
+
+.error{
+  font-family: 'Roboto', sans-serif;
+  color: crimson;
+  font-size: 12px;
+}
+
+.btn-primary{
+  background:  #97079E;
+  border-color: #B959BE;
+}
+.btn-primary:hover, .btn-primary:active:hover, .btn-primary:focus:hover{
+  background: #B959BE;
+  border-color:  #97079E;
+}
+.btn-primary:focus, .btn-primary:active:focus, .btn-primary:visited{
+  background:  #97079E;
+  border-color: #B959BE;
+}

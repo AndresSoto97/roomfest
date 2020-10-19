@@ -1,0 +1,87 @@
+<section class="banner" id="banner">
+  <div class="content">
+    <h2>Llega a nuevos clientes con Room Fest</h2>
+    <p>Gracias a Room Fest los anfitriones podrán ver tus productos desde cualquier dispositivo llegando a más personas</p>
+    <a pageScroll [pageScrollDuration]="700" [pageScrollEasing]="myEasing" href="#productos" class="btn-banner">Servicios y Productos</a>
+  </div>
+</section>
+<section class="profile row d-xl-flex justify-content-xl-center"  id="productos">
+  <div class="content col-md-8">
+    <h2>Bienvenido</h2>
+    <p>Ingresa o actualiza la información de tu servicio para que los anfitriones puedan contactarte</p>
+  </div>
+  <div class="container row d-xl-flex justify-content-xl-center">
+    <div class="profileForm col-md-4 col-sm-12">
+      <form (ngSubmit)="!toedit? addProduct() : updateProduct()">
+        <h2>Agregar producto</h2>
+        <div class="inputBox">
+          <input type="text" name="product" required="required" [(ngModel)]='productName'>
+          <span>Nombre</span>
+          <label class="error" *ngIf="nameValidateMsg != null">{{nameValidateMsg}}</label>
+        </div>
+        <div class="inputBox">
+          <input type="text" name="price" required="required" [(ngModel)]='price'>
+          <span>Costo</span>
+          <label class="error" *ngIf="priceValidateMsg != null">{{priceValidateMsg}}</label>
+        </div>
+        <div class="inputBox">
+          <textarea name="description" required="required" [(ngModel)]='description'></textarea>
+          <span>Descripcion</span>
+          <label class="error" *ngIf="descValidateMsg != null">{{descValidateMsg}}</label>
+        </div>
+        <div class="inputBox">
+          <input type="file" name="imagen[]"  required="required" multiple="" accept="image/*" (change)="selectFile($event)">
+          <label class="error" *ngIf="imgValidateMsg != null">{{imgValidateMsg}}</label>
+        </div>
+        <div class="inputBox">
+          <input type="submit" name="" value="Editar" *ngIf='toedit'>
+          <input type="submit" name="" value="Agregar" *ngIf='!toedit'>
+        </div>
+      </form>
+    </div>
+    <div class="profileInfo col-md-8 col-sm-12">
+      <table class="table">
+        <thead class="header">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Descipción</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products; index as i">
+            <th scope="row"><img [src]='product.imagen' class="img-fluid" width="60" heigth="60" ></th>
+            <td>{{product.nombre}}</td>
+            <td>${{product.precio}}</td>
+            <td>{{product.description}}</td>
+            <td><button class="btn btn-primary" (click)='setDataToEdit(i)'>Editar</button></td>
+            <td><button class="btn btn-danger" (click)='deleteProduct(i)'>Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <div class="table">
+        <div class="row header">
+          <div class="cell"></div>
+          <div class="cell">Nombre</div>
+          <div class="cell">Costo</div>
+          <div class="cell">Descipción</div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+
+        <div class="row">
+          <div class="cell" data-title=""><img src="https://images.unsplash.com/photo-1525627854962-3ad52184f51e?ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" width="60" heigth="60" ></div>
+          <div class="cell" data-title="Nombre">nombre del producto</div>
+            <div class="cell" data-title="Costo">$$$</div>
+          <div class="cell" data-title="Descripcion">Lorem ipsum ...</div>
+          <div class="cell" data-title=""><input type="submit" name="" value="Editar"></div>
+          <div class="cell" data-title=""><input type="submit" name="" value="Eliminar"></div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+

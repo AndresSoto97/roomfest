@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-12 d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 3%;">
+    <div class="content-photo col-md-5" [ngStyle]="{'background': 'url('+images[0]+')', 'background-size': 'cover'}">
+      <div class="description">
+        <a href="#"><h4>{{titulo}}</h4></a>
+        <p>{{description}}</p>
+      </div>
+    </div>
+    <div class="card col-md-5 info-event">
+      <section class="ubication">
+        <h3>Ubicación</h3>
+        <p>{{address}}</p>
+      </section>
+      <h3>Fecha</h3>
+      <section class="date-guest row d-xl-flex justify-content-xl-center align-items-xl-center">
+        <div class="col-md-3">
+          <h6>Día</h6>
+          <p>{{day.split('/')[0]+'/'+day.split('/')[1]+'/'+day.split('/')[2].substring(2,4)}}</p>
+        </div>
+        <div class="col-md-3">
+          <h6>Hora</h6>
+          <p>{{hour}}</p>
+        </div>
+        <div class="col-md-3">
+          <h6>Invitados</h6>
+          <p>{{guests.length}}</p>
+        </div>
+      </section>
+      <section class="d-xl-flex justify-content-xl-center align-items-xl-center">
+        <button class="btn btn-info col-md-4 btn-edit" (click)='toEdit()'><i class="material-icons">edit</i>Editar</button>
+        <button class="btn btn-danger col-md-4 btn-edit" (click)='deleteEvent()'><i class="material-icons">delete</i>Eliminar</button>
+      </section>
+    </div>
+  </div>
+</div>

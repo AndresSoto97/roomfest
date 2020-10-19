@@ -1,0 +1,46 @@
+section{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.information{
+  margin-top: 5%;
+}
+  h1{
+    color: #05407A;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  p{
+    margin: 3% 5% 0 5%;
+    text-align: center;
+  }
+
+img{
+  margin: 5% 0 0 20%;
+  width: 60%;
+  height: 80%;
+}
+
+.secline{
+  width: 100%;
+  height: 45%;
+  justify-content: center;
+}
+  .middledetail{
+    margin: 0 5% 0 5%;
+  }
+  .details{
+    padding: 1% 2% 0 2%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+    .details:hover{
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+  h3{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }

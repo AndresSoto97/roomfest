@@ -1,0 +1,161 @@
+<div class="row" style="margin-bottom: 3%;">
+  <div class="col-md-12">
+      <div>
+          <h1>{{type == 'editar'? 'Editar evento':'Organizar evento'}}</h1>
+      </div>
+  </div>
+</div>
+<div class="col-md-12 organize">
+  <form (ngSubmit)="type=='editar'? _updateEvent() : registerEvent()">
+    <div class="row">
+      <div class="col-md-6 d-xl-flex justify-content-xl-center addimage">
+        <div class="card col-md-12 d-xl-flex justify-content-xl-center align-items-xl-center">
+          <div class="content-image" *ngIf='url == null'>
+            <i class="material-icons">add_photo_alternate</i>
+            <h5>Añada una imagen representativa del evento</h5>
+          </div>
+          <div *ngIf="url" class="image">
+            <img [src]="url" class="img-fluid">
+          </div>
+          <input type="file" class="form-control-file" id="upimg" (change)="selectFile($event, 0)" accept="image/*">
+          <label class="btn btn-success" for="upimg" *ngIf='type != "editar"'>Añadir</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <div class="col-md-12  d-xl-flex justify-content-xl-between">
+                <label for="inputEmail4">Titulo del evento</label><span class="error">{{titleErrorMsg}}</span>
+              </div>
+              <input type="text" class="form-control" id="inputEmail4" name='title' [(ngModel)]="title">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-12  d-xl-flex justify-content-xl-between">
+              <label for="description">Descripción del evento</label><span class="error">{{descriptionErrorMsg}}</span>
+            </div>
+            <textarea class="form-control" id="description" rows="3" name='description' [(ngModel)]="description"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="col-md-12  d-xl-flex justify-content-xl-between">
+              <label for="inputAddress">Dirección</label><span class="error">{{addErrorMsg}}</span>
+            </div>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Calle Main #234, Col. Jhon Doe" name='address' [(ngModel)]="address">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="meses">Mes</label>
+              <select #mes class="form-control" (change)='onChange(mes.value)' name='month' [(ngModel)]="monthSelected">
+                <option *ngFor='let mes of meses' [value]='mes+1'>{{mes<9? '0'+(mes + 1) : mes + 1}}</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="year">Día</label>
+              <select id="year" class="form-control" name='day' [(ngModel)]="daySelected">
+                <option *ngFor='let dia of dias' [value]='dia+1'>{{dia < 9? '0'+(dia + 1) : dia+1}}</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="dias">año</label>
+              <select id="dias" class="form-control" name='year' [(ngModel)]="yearSelected">
+                <option *ngFor='let anio of anios' [value]='anio'>{{anio.toString().substring(2,4)}}</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="hora">Hora:</label>
+              <div  class="row d-xl-flex justify-content-xl-center">
+                <select id='hora' class="form-control col-3 hourDate" name='hour' [(ngModel)]="hourSelected">
+                  <option *ngFor='let hora of horas' [value]='hora+1'>{{hora< 9? '0'+(hora + 1): hora+1}}</option>
+                </select>
+                <select class="form-control col-3 hourDate" name='minute' [(ngModel)]="minuteSelected">
+                  <option *ngFor='let minuto of minutos' [value]='minuto'>{{minuto < 10? '0'+minuto : minuto}}</option>
+                </select>
+                <select class="form-control col-4" name='monAft' [(ngModel)]="amOrpm">
+                  <option *ngFor='let horario of horarios' [value]='horario'>{{horario}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <h5 *ngIf='type!="editar"'>Fotos adicionales</h5>
+      <div class="col-md-12" *ngIf='type!="editar"'>
+        <div class="row d-xl-flex justify-content-xl-between morephotos">
+          <div class="card col-md-3 d-xl-flex justify-content-xl-center align-items-xl-center">
+            <div class="extra-image" *ngIf='image1 == null'>
+              <i class="material-icons">add_photo_alternate</i>
+              <h5>Añada una imagen</h5>
+            </div>
+            <div *ngIf="image1" class="addimage">
+              <img [src]="image1" class="img-fluid">
+            </div>
+            <input type="file" class="form-control-file selectImage" id="upimg1" (change)="selectFile($event, 1)" accept="image/*">
+            <label class="btn btn-success" for="upimg1">Añadir</label>
+          </div>
+          <div class="card col-md-3 d-xl-flex justify-content-xl-center align-items-xl-center">
+            <div class="extra-image" *ngIf='image2 == null'>
+              <i class="material-icons">add_photo_alternate</i>
+              <h5>Añada una imagen</h5>
+            </div>
+            <div *ngIf="image2" class="addimage">
+              <img [src]="image2" class="img-fluid">
+            </div>
+            <input type="file" class="form-control-file selectImage" id="upimg2" (change)="selectFile($event, 2)" accept="image/*">
+            <label class="btn btn-success" for="upimg2">Añadir</label>
+          </div>
+          <div class="card col-md-3 d-xl-flex justify-content-xl-center align-items-xl-center">
+            <div class="extra-image" *ngIf='image3 == null'>
+              <i class="material-icons">add_photo_alternate</i>
+              <h5>Añada una imagen</h5>
+            </div>
+            <div *ngIf="image3" class="addimage">
+              <img [src]="image3" class="img-fluid">
+            </div>
+            <input type="file" class="form-control-file selectImage" id="upimg3" (change)="selectFile($event, 3)" accept="image/*">
+            <label class="btn btn-success" for="upimg3">Añadir</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <h5>Invitados</h5>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-primary" type="button" id="button-addon1" (click)="_addGuests()">Añadir</button>
+              </div>
+              <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" placeholder="jhon_doe@example.com" name='guest' [(ngModel)]='guestEmail'>
+            </div>
+            <span class="error" *ngIf='guestErrorMsg != null'>{{guestErrorMsg}}</span>
+          </div>
+          <div class="col-md-8">
+            <span class="badge badge-secondary" *ngFor='let guest of guests'>{{guest}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <h5>Proveedores</h5>
+        <div class="row d-xl-flex justify-content-xl-between">
+          <div class="card col-md-3 providerCard" *ngFor='let product of products'>
+            <!-- https://www.eventosexpress.com/wp-content/uploads/2017/02/decoracion-con-flores-para-eventos-en-monterrey-ivory.jpg -->
+            <img [src]="product.image" class="card-img-top img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">{{product.nombre}}</h5>
+              <p class="card-text">{{product.description}}</p>
+              <div class="row d-xl-flex justify-content-xl-between">
+                <a class="btn btn-outline-primary col-md-5" [routerLink]="['/product-view',{name: product.nombre,description: product.description,price: product.precio,img: product.image, qr: product.qr, vumark: product.vumark}]" target="_blank">Ver más</a>
+                <a  class="btn btn-outline-success col-md-5 contratar"  (click)='sendRequest(product)'>Contratar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 d-xl-flex justify-content-xl-center">
+        <button type="submit" class="btn btn-success col-md-6">{{type == 'editar'? 'Editar Evento' : 'Crear Evento'}}</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+

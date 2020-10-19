@@ -1,0 +1,14 @@
+<header class="page-head" #appbar (window:scroll)="OnWindowScroll($event)">
+  <a href="#" class='logo'><img src="assets/img/logo.png" class="img-fluid"></a>
+  <nav class="menu">
+    <a routerLink='/signup' class="menu-item">Registrate</a>
+    <a href="#" class="menu-item">Nosotros</a>
+  </nav>
+</header>
+<div class="image row">
+  <div class="title col-6">
+    <h1>Organiza tus eventos e invita a tus amigos</h1>
+  </div>
+  <app-login-form class="col-6"></app-login-form>
+</div>
+

@@ -1,0 +1,26 @@
+<div class="row" style="margin-bottom: 3%;">
+  <div class="col-md-12">
+      <div>
+          <h1>Mis eventos</h1>
+      </div>
+  </div>
+</div>
+<div class='events'>
+  <div class="row d-xl-flex justify-content-xl-center align-items-xl-center" style='height: 50vh' *ngIf='events.length == 0'>
+      <h6>No hay eventos creados aun</h6>
+  </div>
+  <div *ngFor="let event of events">
+    <app-card-event
+      [titulo]='event.data.titulo'
+      [description]='event.data.description'
+      [address]='event.data.direccion'
+      [day]='event.data.dia'
+      [hour]='event.data.hora'
+      [guests]='event.data.invitados'
+      [images]='event.data.images'
+      [idDoc]='event.id'>
+    </app-card-event>
+  </div>
+</div>
+
+

@@ -1,0 +1,26 @@
+<div class="register-photo">
+  <div class="form-container">
+      <div class="image-holder"></div>
+      <form method="post" (ngSubmit)='signUp()'>
+          <h2 class="text-center"><strong>Crea</strong> una cuenta.</h2>
+          <div class="form-group">
+            <input type="text" class="form-control" #userName name="username" [(ngModel)]="username" placeholder="Nombre completo" />
+            <span *ngIf="userNameIncorrect != null" class="errorMsg">{{userNameIncorrect}}</span>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" #correo name="email" [(ngModel)]="email" placeholder="Correo electronico" style="margin-top: 15px;" />
+            <span *ngIf="emailErrorMessage != null" class="errorMsg">{{emailErrorMessage}}</span>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" #psw name="password" [(ngModel)]="password" placeholder="Contraseña" />
+            <span *ngIf="passwordErrorMessage != null" class="errorMsg">{{passwordErrorMessage}}</span>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" #pswConf name="password-repeat" [(ngModel)]="passwordConf" placeholder="Contraseña (confirmar)" />
+            <span *ngIf="passwordNotConfirm != null" class="errorMsg">{{passwordNotConfirm}}</span>
+          </div>
+          <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background: rgb(145,104,170);">Registrar</button></div>
+          <a class="already" routerLink = '/homepage'>Ya tienes una cuenta? Accede aquí.</a>
+      </form>
+  </div>
+</div>

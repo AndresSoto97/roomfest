@@ -1,0 +1,70 @@
+<section class="banner" id="banner">
+  <div class="content">
+    <h2>Llega a nuevos clientes con Room Fest</h2>
+    <p>Gracias a tu perfil las anfitriones pueden conocer tus servicios en cualquie hora del día</p>
+    <a pageScroll [pageScrollDuration]="700" [pageScrollEasing]="myEasing" href="#perfil" class="btn-banner">Mi Perfil</a>
+  </div>
+  </section>
+
+  <section class="profile"  id="perfil">
+    <div class="content col-md-12">
+      <h2>Bienvenido</h2>
+      <p>Asegurate de que tu información sea correcta ya que esta sera vista por tus nuevos clientes</p>
+    </div>
+    <div class="info-container row">
+      <div class="profileInfo col-md-6 col-sm-12 d-xl-flex justify-content-xl-center align-items-xl-center">
+        <div class="box">
+          <div class="icon"><i class="fas fa-address-card"></i></div>
+          <div class="text">
+            <h3>Nombre</h3>
+            <p>{{dataNombre}}.</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="icon"><i class="fas fa-globe"></i></div>
+          <div class="text">
+            <h3>Contacto</h3>
+            <p>{{dataEmail}}<br>{{dataTelefono}}</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="icon"><i class="fas fa-street-view"></i></div>
+          <div class="text">
+            <h3>Dirección</h3>
+            <p>{{dataDireccion}}.</p>
+          </div>
+        </div>
+        <div class="box d-md-flex justify-content-md-center d-sm-flex justify-content-sm-center">
+            <button class="btn btn-outline-danger" (click)="logout()">Cerrar sesión</button>
+        </div>
+      </div>
+      <div class="profileForm col-md-6 col-sm-12 d-xl-flex justify-content-xl-center">
+        <form (ngSubmit)="updateData()">
+          <h2>Actualizar mi información</h2>
+          <div class="inputBox">
+            <input type="text" name="name" required="required" [(ngModel)]='name'>
+            <span>Nombre</span>
+            <label class='error' *ngIf="nameValidateMsg !=null">{{nameValidateMsg}}</label>
+          </div>
+          <div class="inputBox">
+            <input type="number" name="telephone" required="required" [(ngModel)]='telephone'>
+            <span>Telefono</span>
+            <label class='error' *ngIf="telValidateMsg !=null">{{telValidateMsg}}</label>
+          </div>
+          <div class="inputBox">
+            <input type="text" name="address" required="required" [(ngModel)]='address'>
+            <span>Dirección</span>
+            <label class='error' *ngIf="addValidateMsg !=null">{{addValidateMsg}}</label>
+          </div>
+          <div class="inputBox">
+            <textarea required="required" name="description" [(ngModel)]='description'></textarea>
+            <span>Descripción</span>
+            <label class='error' *ngIf="descValidateMsg !=null">{{descValidateMsg}}</label>
+          </div>
+          <div class="inputBox">
+            <input type="submit"  value="Actualizar">
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
