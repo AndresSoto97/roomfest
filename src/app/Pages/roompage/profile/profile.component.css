@@ -77,6 +77,16 @@ div.avatar-bg {
   margin-left: calc(50% - 100px);
 }
 
+.content-table{
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.content-table .header{
+  color: #ffffff;
+  background: #97079E;
+}
+
 .error{
   color: crimson;
 }

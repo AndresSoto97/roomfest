@@ -31,6 +31,8 @@ import { ProductosComponent } from './Pages/proveedor/productos/productos.compon
 import { GuestComponent } from './Pages/guest/guest.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ProductViewComponent } from './Pages/Global/product-view/product-view.component';
+import { AdminPageComponent } from './Pages/admin-page/admin-page.component';
+import { ManageUsersComponent } from './Pages/admin-page/manage-users/manage-users.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { ProductViewComponent } from './Pages/Global/product-view/product-view.c
     SolicitudesComponent,
     ProductosComponent,
     GuestComponent,
-    ProductViewComponent
+    ProductViewComponent,
+    AdminPageComponent,
+    ManageUsersComponent
   ],
   imports: [
     BrowserModule,

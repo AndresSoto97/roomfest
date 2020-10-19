@@ -1,0 +1,12 @@
+.profile-row{
+  margin-bottom: 5%;
+}
+
+.events{
+  overflow-y: scroll;
+  height: 550px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}

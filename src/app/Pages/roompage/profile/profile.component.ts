@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SolicitudService } from 'src/app/services/solicitud.service';
 import { UserService } from 'src/app/services/user.service';
 import { ValidatorsService } from 'src/app/util/validators.service';
 import Swal from 'sweetalert2';
@@ -10,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private userService: UserService, private validate: ValidatorsService) { }
+  constructor(private userService: UserService, private validate: ValidatorsService, private solicitudService: SolicitudService) { }
 
   names: string;
   lastName: string;
@@ -20,6 +21,8 @@ export class ProfileComponent implements OnInit {
   inputNamesError: string;
   inputLastError: string;
   inputTelephoneError: string;
+
+  requests = [];
 
   ngOnInit(): void {
     this.userService.getUserData(localStorage.getItem('id')).subscribe((eventSnapshot)=>{
@@ -33,6 +36,17 @@ export class ProfileComponent implements OnInit {
                           eventSnapshot.payload.data()['nombre'].split(' ')[1] +' '+ eventSnapshot.payload.data()['nombre'].split(' ')[2]) :
                       eventSnapshot.payload.data()['nombre'].split(' ')[2] +' '+ eventSnapshot.payload.data()['nombre'].split(' ')[3];
       this.telephone = eventSnapshot.payload.data()['telefono'];
+    });
+    this.solicitudService.getAnfitrionSolicitudes().subscribe((solicitudSnapshot) => {
+      this.requests = [];
+      solicitudSnapshot.forEach((solicitudData)=>{
+        this.requests=[{
+          proveedor: solicitudData.payload.doc.data()['proveedor'],
+          fecha: solicitudData.payload.doc.data()['fecha'],
+          producto: solicitudData.payload.doc.data()['producto'],
+          estado: solicitudData.payload.doc.data()['estado']
+        }];
+      });
     });
   }
 

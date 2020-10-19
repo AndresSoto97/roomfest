@@ -49,4 +49,27 @@
           </div>
       </div>
   </form>
+  <div class="col-md-12 content-table">
+    <h4>Solicitudes</h4>
+    <table class="table">
+      <thead class="header">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of requests; index as i">
+          <th scope="row">{{i+1}}</th>
+          <td>{{request.proveedor}}</td>
+          <td>{{request.fecha}}</td>
+          <td>{{request.producto}}</td>
+          <td>{{request.estado}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

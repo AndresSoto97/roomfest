@@ -48,7 +48,8 @@ export class LoginFormComponent implements OnInit {
             Swal.showLoading();
           }
         }).then(() => {
-          this.router.navigate([localStorage.getItem('type') != 'proveedor'? '/roompage':'/proveedor']);
+          this.router.navigate([localStorage.getItem('type') != 'proveedor'?
+            (localStorage.getItem('type') == 'admin'? '/admin' : '/roompage'):'/proveedor']);
         });
       }).catch((error) => {
         console.log(error);

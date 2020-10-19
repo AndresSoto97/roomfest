@@ -237,19 +237,22 @@ export class CreateEventComponent implements OnInit {
     if(this.validateForm()){
       let day = this.daySelected < 10? '0'+this.daySelected : this.daySelected;
       let month = this.monthSelected < 10? '0'+this.monthSelected : this.monthSelected;
-      this.solictudService.createRequest(product.idProveedor, {
+      this.solictudService.createRequest({
         direccion: this.address,
         estado: 'en espera',
         fecha: day+'/'+month+'/'+this.yearSelected,
         nombre: localStorage.getItem('username'),
         producto: product.nombre,
         idCliente: localStorage.getItem('id'),
+        idProveedor: product.idProveedor,
+        proveedor: localStorage.getItem('username'),
         emailCliente: localStorage.getItem('email')
       }).then((doc)=>{
-        this.solictudService.updateRequest(product.idProveedor, doc.id, {id: doc.id}).then(()=>{
+        this.solictudService.updateRequest(doc.id, {id: doc.id}).then(()=>{
           Swal.fire({icon: 'success', title: 'Solicitud de contratación enviada'});
         }).catch((err)=>{
           Swal.fire({icon: 'error', title: 'Error al eviar solicitud'});
+          console.log(err);
         });
       });
     }else{
