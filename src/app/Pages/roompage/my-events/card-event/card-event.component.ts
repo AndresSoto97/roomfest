@@ -43,6 +43,10 @@ export class CardEventComponent implements OnInit {
     ]);
   }
 
+  viewEvent(){
+    this.router.navigate(['/guest',{nombre: this.titulo, description: this.description, address: this.address, sources: this.images, fecha: this.day, hora: this.hour}])
+  }
+
   deleteEvent(){
     Swal.fire({
       title: '¿Esta seguro de querer borrar este evento?',

@@ -2,7 +2,7 @@
   <div class="col-md-12 d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 3%;">
     <div class="content-photo col-md-5" [ngStyle]="{'background': 'url('+images[0]+')', 'background-size': 'cover'}">
       <div class="description">
-        <a><h4>{{titulo}}</h4></a>
+        <a (click)="viewEvent()"><h4>{{titulo}}</h4></a>
         <p>{{description}}</p>
       </div>
     </div>

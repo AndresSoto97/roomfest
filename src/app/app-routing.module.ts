@@ -27,7 +27,7 @@ const routes: Routes = [
     {path: 'profile', component: ProfileComponent},
     {path: 'create', component: CreateEventComponent,},
     {path: 'edit-event', component: CreateEventComponent},
-    {path:'product-view', component: ProductViewComponent}
+    {path:'product-view', component: ProductViewComponent},
   ]},
   {path: 'proveedor', component: ProveedorComponent, children: [
     {path: '', redirectTo: 'account', pathMatch: 'full'},
