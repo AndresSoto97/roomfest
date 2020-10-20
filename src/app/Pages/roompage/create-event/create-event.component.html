@@ -144,7 +144,7 @@
               <h5 class="card-title">{{product.nombre}}</h5>
               <p class="card-text">{{product.description}}</p>
               <div class="row d-xl-flex justify-content-xl-between">
-                <a class="btn btn-outline-primary col-md-5" [routerLink]="['/product-view',{name: product.nombre,description: product.description,price: product.precio,img: product.image, qr: product.qr, vumark: product.vumark}]" target="_blank">Ver más</a>
+                <button class="btn btn-outline-primary col-md-5" (click)='viewProduct({name: product.nombre,description: product.description,price: product.precio,img: product.image, qr: product.qr, vumark: product.vumark})' >Ver más</button>
                 <a  class="btn btn-outline-success col-md-5 contratar"  (click)='sendRequest(product)'>Contratar</a>
               </div>
             </div>

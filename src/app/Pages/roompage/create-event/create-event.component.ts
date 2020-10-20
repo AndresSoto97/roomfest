@@ -260,4 +260,8 @@ export class CreateEventComponent implements OnInit {
     }
   }
 
+  viewProduct(data:any){
+    this.router.navigate(['roompage/product-view', data]);
+  }
+
 }
