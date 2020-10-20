@@ -2,7 +2,7 @@
   <div class="col-md-12 d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 3%;">
     <div class="content-photo col-md-5" [ngStyle]="{'background': 'url('+images[0]+')', 'background-size': 'cover'}">
       <div class="description">
-        <a href="#"><h4>{{titulo}}</h4></a>
+        <a><h4>{{titulo}}</h4></a>
         <p>{{description}}</p>
       </div>
     </div>
@@ -27,7 +27,7 @@
         </div>
       </section>
       <section class="d-xl-flex justify-content-xl-center align-items-xl-center">
-        <button class="btn btn-info col-md-4 btn-edit" (click)='toEdit()'><i class="material-icons">edit</i>Editar</button>
+        <button class="btn btn-info col-md-4 btn-edit" (click)='toEdit()' *ngIf='type'><i class="material-icons">edit</i>Editar</button>
         <button class="btn btn-danger col-md-4 btn-edit" (click)='deleteEvent()'><i class="material-icons">delete</i>Eliminar</button>
       </section>
     </div>

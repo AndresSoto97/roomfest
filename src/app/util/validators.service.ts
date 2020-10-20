@@ -7,7 +7,7 @@ export class ValidatorsService {
 
   constructor() { }
 
-  validateEmail(email: string, renderer: Renderer2, id: ElementRef):string {
+  validateEmail(email: string, renderer?: Renderer2, id?: ElementRef):string {
     let reg = /^(([a-zñÑ0-9._]+)+([@]+[a-z]+)+([.][a-z]+))*$/;
 
     if(email.length === 0){
@@ -26,7 +26,23 @@ export class ValidatorsService {
     }
   }
 
-  validatePassword(password: string, renderer: Renderer2, id: ElementRef):string{
+  validateProvEmail(email: string):string {
+    let reg = /^(([a-zñÑ0-9._]+)+([@]+[a-z]+)+([.][a-z]+))*$/;
+
+    if(email.length === 0){
+      return "El campo no puede estar vacio.";
+    }
+    else{
+      if(!reg.exec(email)){
+        return 'Escriba un correo valido';
+      }
+      else{
+        return null;
+      }
+    }
+  }
+
+  validatePassword(password: string, renderer?: Renderer2, id?: ElementRef):string{
     if(password.length === 0){
       renderer.addClass(id.nativeElement, 'form-control-error');
       return 'El campo no puede estar vacio';
@@ -38,6 +54,20 @@ export class ValidatorsService {
       }
       else{
         renderer.removeClass(id.nativeElement, 'form-control-error');
+        return null;
+      }
+    }
+  }
+
+  validateProvPassword(password: string):string{
+    if(password.length === 0){
+      return 'El campo no puede estar vacio';
+    }
+    else{
+      if(password.length < 6){
+        return 'La contraseña debe tener 6 caracteres';
+      }
+      else{
         return null;
       }
     }

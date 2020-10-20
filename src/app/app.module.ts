@@ -33,6 +33,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ProductViewComponent } from './Pages/Global/product-view/product-view.component';
 import { AdminPageComponent } from './Pages/admin-page/admin-page.component';
 import { ManageUsersComponent } from './Pages/admin-page/manage-users/manage-users.component';
+import { MangaEventsComponent } from './Pages/admin-page/manga-events/manga-events.component';
+import { ManageProductsComponent } from './Pages/admin-page/manage-products/manage-products.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { ManageUsersComponent } from './Pages/admin-page/manage-users/manage-use
     GuestComponent,
     ProductViewComponent,
     AdminPageComponent,
-    ManageUsersComponent
+    ManageUsersComponent,
+    MangaEventsComponent,
+    ManageProductsComponent
   ],
   imports: [
     BrowserModule,

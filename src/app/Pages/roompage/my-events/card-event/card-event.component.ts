@@ -19,6 +19,8 @@ export class CardEventComponent implements OnInit {
   @Input() guests = [];
   @Input() idDoc: any;
 
+  type = localStorage.getItem('type') == "anfitrion";
+
   constructor(private router: Router, private firestore: EventsService) { }
 
   ngOnInit(): void {

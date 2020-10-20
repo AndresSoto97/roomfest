@@ -70,4 +70,19 @@ export class LoginFormComponent implements OnInit {
     }
   }
 
+  resetPassword(){
+    Swal.fire({
+      title: 'Ingresa tu email',
+      input: 'email',
+      showCancelButton: true,
+      cancelButtonColor: '#EA2B23',
+    }).then((email)=>{
+      this.authService.resetPassword(email.value).then(()=>{
+        Swal.fire({icon: 'success', text: 'Se ha enviado un mensaje a tu correo para reestablecer la contraseña'});
+      }, function(dismiss){}).catch((error)=>{
+        Swal.fire({icon: 'error', text: 'Algo ha salido mal'});
+      });
+    });
+  }
+
 }

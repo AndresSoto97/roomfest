@@ -11,7 +11,7 @@
       <input type="password" class="form-control" id="exampleInputPassword1" #psw name='password' [(ngModel)]="password">
       <span *ngIf="passwordValidateMsg != null" class="errorMsg">{{passwordValidateMsg}}</span>
     </div>
-    <div class="forgot"><a href="#">Olvide mi contraseña</a></div>
+    <div class="forgot"><a (click)='resetPassword()' class="forgot">Olvide mi contraseña</a></div>
     <div class='enter'>
       <button type="submit" class="btn btn-primary col-8">Entrar</button>
     </div>

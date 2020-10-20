@@ -23,4 +23,8 @@ export class EventsService {
   public deleteEvent(docId:any){
     return this.firestore.collection('users').doc(localStorage.getItem('id')).collection('eventos').doc(docId).delete();
   }
+
+  public getAllEvents(id:any){
+    return this.firestore.collection('users').doc(id).collection('eventos').snapshotChanges();
+  }
 }

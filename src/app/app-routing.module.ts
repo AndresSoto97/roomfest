@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminPageComponent } from './Pages/admin-page/admin-page.component';
+import { ManageProductsComponent } from './Pages/admin-page/manage-products/manage-products.component';
 import { ManageUsersComponent } from './Pages/admin-page/manage-users/manage-users.component';
+import { MangaEventsComponent } from './Pages/admin-page/manga-events/manga-events.component';
 import { ProductViewComponent } from './Pages/Global/product-view/product-view.component';
 import { GuestComponent } from './Pages/guest/guest.component';
 import { HomepageComponent } from './Pages/Homepage/homepage.component';
@@ -35,7 +37,8 @@ const routes: Routes = [
   {path: 'admin', component: AdminPageComponent, children:[
     {path: '', redirectTo: 'users', pathMatch: 'full'},
     {path: 'users', component: ManageUsersComponent},
-
+    {path: 'manage-events', component: MangaEventsComponent},
+    {path: 'manage-products', component: ManageProductsComponent},
   ]},
   {path:'guest', component:GuestComponent},
   {path:'product-view', component: ProductViewComponent}

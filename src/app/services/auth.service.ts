@@ -27,7 +27,7 @@ export class AuthService {
         nombre: username,
         email: email,
         telefono: '',
-        userType: 'anfitrion'
+        userType: localStorage.getItem('type')=='admin'? 'proveedor' : 'anfitrion',
       });
       user.user.updateProfile({
         displayName: username
@@ -51,6 +51,10 @@ export class AuthService {
       /* console.log('error code:',error.code); */
       throw error;
     });
+  }
+
+  resetPassword(email:string){
+    return this.firebaseAuth.sendPasswordResetEmail(email);
   }
 
 }

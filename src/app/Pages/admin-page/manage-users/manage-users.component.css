@@ -10,3 +10,22 @@
 ::-webkit-scrollbar {
   width: 10px;
 }
+
+.btn-primary{
+  background:  #97079E;
+  border-color: #B959BE;
+}
+.btn-primary:hover, .btn-primary:active:hover, .btn-primary:focus:hover{
+  background: #B959BE;
+  border-color:  #97079E;
+}
+.btn-primary:focus, .btn-primary:active:focus, .btn-primary:visited{
+  background:  #97079E;
+  border-color: #B959BE;
+}
+
+.error{
+  font-family: 'Roboto', sans-serif;
+  color: crimson;
+  font-size: 12px;
+}

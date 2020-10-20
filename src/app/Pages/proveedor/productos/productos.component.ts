@@ -113,7 +113,10 @@ export class ProductosComponent implements OnInit {
             precio: this.price,
             descripcion: this.description,
             image: urlD,
-            idProveedor: localStorage.getItem('id')
+            idProveedor: localStorage.getItem('id'),
+            proveedor: localStorage.getItem('username'),
+            qrAr: 'https://firebasestorage.googleapis.com/v0/b/roomfest-a6feb.appspot.com/o/qrExample.png?alt=media&token=0c3b23e3-0471-414b-bc0d-c154bf559037',
+            vumark: ''
           }).then(() => {
             this.resetForm();
           });

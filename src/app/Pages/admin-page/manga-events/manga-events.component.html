@@ -1,0 +1,27 @@
+<div class="row" style="margin-bottom: 3%;">
+  <div class="col-md-12">
+      <div>
+          <h1>Eventos</h1>
+      </div>
+  </div>
+</div>
+<div class="col-md-12">
+  <select #anfitrion class="form-control col-4" (change)='getEvents(anfitrion.value)'>
+    <option *ngFor='let anfitrion of anfitriones' [value]="anfitrion.id" >{{anfitrion.nombre}}</option>
+  </select>
+  <div class="col-md-12 dont-content d-xl-flex justify-content-xl-center align-items-xl-center" *ngIf='eventsSelected.length === 0'>
+    <h6>No hay eventos registrados</h6>
+  </div>
+  <div class="event-cards" *ngFor="let eventSelected of eventsSelected">
+    <app-card-event
+      [titulo]='eventSelected.data.titulo'
+      [description]='eventSelected.data.description'
+      [address]='eventSelected.data.direccion'
+      [day]='eventSelected.data.dia'
+      [hour]='eventSelected.data.hora'
+      [guests]='eventSelected.data.invitados'
+      [images]='eventSelected.data.images'
+      [idDoc]='eventSelected.id'>
+    </app-card-event>
+  </div>
+</div>

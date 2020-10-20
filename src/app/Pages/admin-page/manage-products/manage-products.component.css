@@ -1,0 +1,16 @@
+.profileInfo .header{
+  background-color: #97079E;
+  color: #fff;
+}
+
+.inputBox #addVM{
+  display: none;
+}
+
+.inputBox label{
+  padding: 1% 5%;
+}
+
+.inputBox button{
+  padding: 5%;
+}

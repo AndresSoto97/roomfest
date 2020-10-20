@@ -1,0 +1,41 @@
+<div class="row" style="margin-bottom: 3%;">
+  <div class="col-md-12">
+      <div>
+          <h1>Productos</h1>
+      </div>
+  </div>
+</div>
+<div class="profileInfo col-md-12">
+  <table class="table">
+    <thead class="header">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Proveedor</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Costo</th>
+        <th scope="col">Descipción</th>
+        <th scope="col">Control</th>
+        <th scope="col">Agregar Vumark</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let product of products'>
+        <th scope="row">
+          <img [src]='product.data.image' class="img-fluid" width="100" heigth="100" >
+        </th>
+        <td>{{product.data.proveedor}}</td>
+        <td>{{product.data.nombre}}</td>
+        <td>${{product.data.precio}}</td>
+        <td>{{product.data.descripcion}}</td>
+        <td><button class="btn btn-danger" (click)='deleteProduct(product.id)'><i class="material-icons d-xl-flex justify-content-xl-center align-items-xl-center">delete</i></button></td>
+        <td>
+          <div class="inputBox d-xl-flex justify-content-xl-between align-items-xl-center">
+            <input id='addVM' type="file" name="imagen[]"  required="required" multiple="" accept="image/*" (change)="selectFile($event)">
+            <label for="addVM" class="btn btn-secondary">Seleccionar</label>
+            <button class="btn btn-success" *ngIf="imagen!=null" (click)='updateVM(product.id)'><i class="material-icons d-xl-flex justify-content-xl-center align-items-xl-center">cloud_upload</i></button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
