@@ -32,18 +32,6 @@ export class GuestComponent implements OnInit {
     this.sources = this.routeActive.snapshot.params.sources.split(',');
     this.fecha = this.routeActive.snapshot.params.fecha;
     this.hora = this.routeActive.snapshot.params.hora;
-
-    /* $(function(){
-      SyntaxHighlighter.all();
-    });
-    $(window).load(function(){
-      $('.flexslider').flexslider({
-        animation: "slide",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-      });
-    });*/
   }
 
 }
