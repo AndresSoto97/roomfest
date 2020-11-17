@@ -8,8 +8,8 @@
   <div class="col-md-6 image">
     <img src="https://i.pinimg.com/originals/5e/6b/1d/5e6b1de8510f7b7743f97d4e8217001a.png" class="img-fluid">
   </div>
-  <div class="row secline">
-    <div *ngFor="let detail of details; index as detailIndex;" class="col-md-3 col-xs-8 card details" [ngClass]="{'middledetail' : detailIndex == 1}">
+  <div class="row secline d-sm-flex justify-content-sm-center align-items-sm-center">
+    <div *ngFor="let detail of details; index as detailIndex;" class="col-md-3 col-sm-12 card details" [ngClass]="{'middledetail' : detailIndex == 1}">
       <h3>{{ detail.title}}</h3>
       <div class="card-body">
         <p>{{detail.img}}</p>

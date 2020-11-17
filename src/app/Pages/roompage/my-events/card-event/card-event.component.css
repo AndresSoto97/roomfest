@@ -69,10 +69,10 @@
   background-color: #54428E;
 }
 
-section > button{
+/* section > button{
   margin-right: 5%;
   margin-left: 5%;
-}
+} */
 /* @media (max-width:1200px) {
   .imgage{
     border-radius: 15%;
@@ -85,4 +85,23 @@ section > button{
   .info-event{
     border-radius: 0 0 3% 3%;
   }
+  .content-photo{
+    border-radius: 3% 3% 0 0;
+  }
+}
+
+@media (max-width: 768px){
+  .content-photo{
+    border-radius: 3% 3% 0 0;
+  }
+  .date-guest{
+    padding: 0 3% 0 3%;
+  }
+  .info-event{
+    height: 50%;
+  }
+  /* section > button{
+    margin-right: 5%;
+    margin-left: 5%;
+  } */
 }

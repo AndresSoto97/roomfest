@@ -27,7 +27,6 @@ img{
 .secline{
   width: 100%;
   height: 45%;
-  justify-content: center;
 }
   .middledetail{
     margin: 0 5% 0 5%;
@@ -43,4 +42,25 @@ img{
   h3{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+  }
+
+  @media (max-width: 768px){
+    section{
+      height: 205%;
+    }
+    .details{
+      margin: 0 0 5% 0;
+    }
+    .information{
+      height: 10%;
+      margin-top: 5%;
+    }
+    img{
+      margin: 0 0 0 10%;
+      width: 80%;
+      height: 80%;
+    }
+    .image{
+      height: 20%;
+    }
   }

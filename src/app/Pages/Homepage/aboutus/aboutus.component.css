@@ -12,3 +12,14 @@ section{
     padding: 2%;
     height: 60%;
   }
+
+@media (max-width: 768px){
+  section{
+    height: 100%;
+  }
+  .aboutus{
+    width: 80%;
+    padding: 2%;
+    height: 60%;
+  }
+}
